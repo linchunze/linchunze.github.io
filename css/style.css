@@ -18,9 +18,10 @@ a:focus {
 .navbar,
 .footer {
     /*background-image: linear-gradient(120deg, #c676df, #983e34);*/
-    background-image: linear-gradient(120deg, #DDDDFF, #0000E3);
+/*    background-image: linear-gradient(120deg, #DDDDFF, #0000E3);*/
+    background-image: linear-gradient(120deg, #e8e8e9, #ffffff);
     /*background-color: #00A2E2;*/
-    color: white;
+    color: black;
 }
 
 .navbar .nav>li>a:hover {
@@ -32,7 +33,7 @@ a:focus {
 }
 
 .navbar .nav>li>a {
-    color: white;
+    color: black;
 }
 
 .footer {
@@ -41,7 +42,9 @@ a:focus {
 }
 
 .gray-container {
-    background-color: #eee;
+/*    background-color: #eee;*/
+/*    border-bottom: solid 1px gray;*/
+
 }
 
 #about {
@@ -70,7 +73,7 @@ a:focus {
 }
 
 #me-img {
-    width: 80%;
+    width: 70%;
     /*border: 10px solid #FFFFCC;*/
     border: 8px solid #FFFFCC;
     /*transform: rotate(-15deg);*/
