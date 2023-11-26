@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/boxicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css?ver=20200108">
+    <link rel="stylesheet" href="assets/css/jquery.imgcmp-1.0.0.css">
+    <link rel="stylesheet" href="assets/css/jquery.imgctl-1.0.0.css">
     <!-- JavaScript -->
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.imgcmp-1.0.0.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.imgctl-1.0.0.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.event.move-2.0.0.min.js"></script>
 </head>
 <body>
     <div id="header">
@@ -186,7 +191,7 @@
                         <video src="assets/projects/2d_avatar.mp4" controls></video>
                         <div class="card-body">
                             <h5 class="card-title">Audio Driven Talking Head</h5>
-                            <p class="card-text"> Given text or audio, we generate the visual-audio synchronized 2D avatar. All parts of the head look natural when speaking without any weird mouth, teeth, nose movements. </p>
+                            <p class="card-text"> Given text or audio, we generate the visual-audio synchronized 2D avatar. All parts of the head look natural when speaking without any weird mouth, teeth and nose movements. </p>
                         </div>
                     </div> <!-- .card -->
                 </div> <!-- .col-lg-4.col-md-6.col-sm-12 -->
@@ -235,14 +240,28 @@
                         
                         <div class="card-body">
                             <h5 class="card-title"> Face Stylization </h5>
-                            <p class="card-text">This project converts the given image into different styles while keeping the characteristic of the input person.</p>
+                            <p class="card-text">This project converts the given image into a dozen of different styles while keeping the characteristics of the input person: Sketch, American Comic, Manga, Oil painting, CG style, Disney style, etc..</p>
                         </div>
                     </div> <!-- .card -->
                 </div> <!-- .col-lg-4.col-md-6.col-sm-12 -->
 
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                     <div class="card">
-                        <img src="assets/projects/skin.jpeg" class="card-img-top">
+                        <div class='row'>
+                        <div class="col-md-6">
+                        <div class="imgcmp-container">
+                            <img src="./assets/projects/skin1.jpeg" class="imgcmp-before">
+                            <img src="./assets/projects/skin1a.jpeg" class="imgcmp-after">
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="imgcmp-container">
+                            <img src="./assets/projects/skin2.jpeg" class="imgcmp-before">
+                            <img src="./assets/projects/skin2a.jpeg" class="imgcmp-after">
+                        </div>
+                        </div> 
+                        </div>
+                        <!-- <img src="assets/projects/skin.jpeg" class="card-img-top"> -->
                         <div class="card-body">
                             <h5 class="card-title"> Face Beautification </h5>
                             <p class="card-text">Given a human face, we eliminate most flaws, wrinkles and dark circle on the face. We generate natural and realistic effect of the skin's texture and retain distinctive personal characteristics to avoid obvious airbrushing effects.</p>
@@ -255,13 +274,29 @@
                         <video src="assets/projects/out_accelerate2.mp4" controls></video>
                         <div class="card-body">
                             <h5 class="card-title"> Facial Attributes Editing </h5>
-                            <p class="card-text"> I construct a GAN Studio based on the StyleGAN2 framework and disentangled latent vectors. With this GAN Studio, users can easily edit facial attributes by moving the sliders of different attributes and merging attributes from two facial images.</p>
+                            <p class="card-text"> I construct a GAN Studio based on the StyleGAN2 and disentangled latent vectors. With this GAN Studio, users can easily edit facial attributes by moving the sliders of different attributes and merge attributes from two facial images.</p>
                             
                         </div>
                     </div> <!-- .card -->
                 </div> <!-- .col-lg-4.col-md-6.col-sm-12 -->
-
-            </div> <!-- .row -->
+                </div> <!-- .row -->
+                
+                <!-- <h5> Others </h5>
+                <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card">
+                        <div class="imgcmp-container">
+                            <img src="./assets/projects/jay.png" class="imgcmp-before">
+                            <img src="./assets/projects/jay2.png" class="imgcmp-after">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"> Game Boy Style Image/Sound </h5>
+                            <p class="card-text"> wdwd </p>
+                        </div>
+                    </div> 
+                </div> 
+                </div> -->
+                
             </div>
 
             <div id="publications" class="section">
@@ -518,6 +553,24 @@
             }
         })
     </script>
+
+    <script type="text/javascript">
+    window.onload = function() {
+      $(".imgcmp-container").imgcmp({
+        default_offset_pct: 0.5,
+        // before_label: 'Real Input',
+        // after_label: 'Pixel Style'
+      });
+      $(".imgctl-container").imgctl({
+          "min": 0,
+          "max": 59,
+          "step": 1,
+          "val": 0,
+          "loadingTop": "35%",
+          "loadingLeft": "35%",
+      });
+    }
+  </script>
     
 </body>
 </html>
